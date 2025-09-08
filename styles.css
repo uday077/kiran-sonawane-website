@@ -534,6 +534,13 @@ section {
     opacity: 0.4;
 }
 
+@media (max-width: 768px) {
+    .experience::before {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots-mobile" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1.5" fill="rgba(59,130,246,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots-mobile)"/></svg>');
+        opacity: 0.3;
+    }
+}
+
 .timeline {
     position: relative;
     max-width: 1000px;
@@ -792,6 +799,13 @@ section {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(59,130,246,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .skills::before {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid-mobile" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(59,130,246,0.08)" stroke-width="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid-mobile)"/></svg>');
+        opacity: 0.2;
+    }
 }
 
 .skills-grid {
@@ -1253,23 +1267,89 @@ section {
     }
 
     .timeline::before {
-        left: 30px;
+        display: none;
     }
 
     .timeline-item {
         width: 100%;
         left: 0 !important;
-        padding-left: 4rem !important;
+        padding-left: 2.5rem !important;
         padding-right: 0 !important;
+        margin-bottom: 2rem;
     }
 
     .timeline-marker {
-        left: 18px !important;
+        left: 15px !important;
         right: auto !important;
+        width: 16px;
+        height: 16px;
+        border: 3px solid white;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    }
+
+    .timeline-content {
+        padding: 1.2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+        border-left: 4px solid #3b82f6;
+    }
+
+    .timeline-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .company {
+        font-size: 1.1rem;
+    }
+
+    .duration {
+        font-size: 0.9rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .project {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .project h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .timeline-content li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        padding-left: 1.5rem;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .skill-category h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-category h3 i {
+        font-size: 1.5rem;
+        padding: 0.6rem;
+    }
+
+    .skill-tags {
+        gap: 0.6rem;
+    }
+
+    .skill-tag {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 
     .education-grid {
