@@ -2097,17 +2097,13 @@ body {
     }
 
     .hero-title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
         text-align: center;
-        gap: 0.5rem;
-        min-height: auto;
         margin-bottom: 1.5rem;
     }
 
     .hero-greeting {
-        display: block;
+        display: inline-block;
         font-size: 1rem;
         margin-bottom: 0.5rem;
     }
@@ -2126,11 +2122,6 @@ body {
         gap: 0.5rem;
         font-size: 1rem;
         text-align: center;
-    }
-
-
-    .hero-name {
-        font-size: 2.8rem;
     }
     
     .hero-stats {
@@ -2303,16 +2294,19 @@ body {
     }
 
     .hero-title {
-        gap: 0.3rem;
+        display: block;
+        text-align: center;
         margin-bottom: 1rem;
     }
 
     .hero-greeting {
+        display: inline-block;
         font-size: 0.9rem;
         margin-bottom: 0.3rem;
     }
 
     .hero-name {
+        display: block;
         font-size: 2.2rem;
         letter-spacing: -0.5px;
         margin-bottom: 0.5rem;
@@ -2322,24 +2316,22 @@ body {
     }
 
     .hero-role {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 0.9rem;
         gap: 0.3rem;
+        text-align: center;
+    }
+    
+    .hero-role i {
+        font-size: 0.8rem;
     }
     
     @supports (-webkit-background-clip: text) {
         .hero-name {
             color: transparent;
         }
-    }
-    
-    .hero-role {
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-        gap: 0.3rem;
-    }
-    
-    .hero-role i {
-        font-size: 1rem;
     }
     
     .hero-greeting {
