@@ -28,6 +28,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Navbar background change on scroll
+// Fix hero name flicker immediately
+document.addEventListener('DOMContentLoaded', function() {
+    const heroName = document.querySelector('.hero-name');
+    if (heroName) {
+        heroName.style.opacity = '0';
+        heroName.style.webkitTextFillColor = 'transparent';
+        heroName.style.background = 'linear-gradient(135deg, #667eea, #764ba2, #f093fb, #667eea, #4facfe, #00f2fe)';
+        heroName.style.backgroundSize = '400% 400%';
+        heroName.style.webkitBackgroundClip = 'text';
+        heroName.style.backgroundClip = 'text';
+    }
+});
+
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
@@ -58,6 +71,31 @@ document.addEventListener('DOMContentLoaded', () => {
     elementsToAnimate.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
+    });
+    
+    // Enhanced scroll animations for cards
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                // Add different animations based on element type
+                if (element.classList.contains('about-card')) {
+                    element.style.animation = 'slideInLeft 0.8s ease-out forwards';
+                } else if (element.classList.contains('experience-card')) {
+                    element.style.animation = 'scaleIn 0.8s ease-out forwards';
+                } else if (element.classList.contains('certification-card')) {
+                    element.style.animation = 'rotateIn 0.8s ease-out forwards';
+                } else if (element.classList.contains('contact-card')) {
+                    element.style.animation = 'slideInRight 0.8s ease-out forwards';
+                }
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    // Observe cards for enhanced animations
+    document.querySelectorAll('.about-card, .experience-card, .certification-card, .contact-card').forEach(el => {
+        scrollObserver.observe(el);
     });
 });
 

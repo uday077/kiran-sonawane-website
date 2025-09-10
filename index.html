@@ -47,9 +47,45 @@
     <link rel="apple-touch-icon" href="favicon.png">
     
     <!-- Stylesheets -->
+    <!-- Font Preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS for hero name -->
+    <style>
+        .hero-name {
+            opacity: 0;
+            -webkit-text-fill-color: transparent;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #667eea, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: fadeInUpName 0.4s ease-out 0.2s both, gradientShift 3s ease-in-out infinite;
+            will-change: opacity, transform, background-position;
+        }
+        
+        @keyframes fadeInUpName {
+            0% { 
+                opacity: 0; 
+                transform: translateY(30px);
+                -webkit-text-fill-color: transparent;
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0);
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
     
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -121,20 +157,32 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="hero-particles"></div>
-            <div class="hero-gradient"></div>
-        </div>
+    <div class="hero-background">
+        <div class="hero-particles"></div>
+        <div class="hero-gradient"></div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-element">🚀</div>
+        <div class="floating-element">⚡</div>
+        <div class="floating-element">💻</div>
+        <div class="floating-element">☁️</div>
+        
+        <!-- Particles -->
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        <span class="hero-greeting">👋 Hello, I'm</span>
                         <span class="hero-name">Kiran Sonawane</span>
-                        <span class="hero-role">
-                            <i class="fas fa-cogs"></i>
-                            DevOps Engineer |
-                        </span>
                     </h1>
                     <p class="hero-description">
                         Passionate DevOps Engineer with <strong>4+ years</strong> of hands-on experience in 
@@ -1273,7 +1321,7 @@
                             </div>
                         </div>
                         <div class="resume-download">
-                            <a href="resume.pdf" class="btn btn-resume" download="Kiran_Sonawane_Resume.pdf">
+                            <a href="Kiran_Sonawane_Resume.pdf" class="btn btn-resume" download="Kiran_Sonawane_Resume.pdf">
                                 <i class="fas fa-download"></i>
                                 <span>Download Resume</span>
                             </a>
