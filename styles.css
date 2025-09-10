@@ -2097,7 +2097,9 @@ body {
     }
 
     .hero-title {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         margin-bottom: 1.5rem;
     }
@@ -2122,6 +2124,16 @@ body {
         gap: 0.5rem;
         font-size: 1rem;
         text-align: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .hero-stats {
@@ -2294,7 +2306,9 @@ body {
     }
 
     .hero-title {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         margin-bottom: 1rem;
     }
@@ -2326,6 +2340,22 @@ body {
     
     .hero-role i {
         font-size: 0.8rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
     }
     
     @supports (-webkit-background-clip: text) {
