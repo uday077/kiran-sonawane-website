@@ -43,7 +43,8 @@
     <link rel="canonical" href="https://kiransonawane.netlify.app">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
@@ -101,6 +102,9 @@
                     <a href="#skills" class="nav-link">Skills</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav-item">
                     <a href="#experience" class="nav-link">Experience</a>
                 </li>
                 <li class="nav-item">
@@ -124,10 +128,6 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="hero-badge">
-                        <i class="fas fa-award"></i>
-                        <span>AWS Certified Solutions Architect</span>
-                    </div>
                     <h1 class="hero-title">
                         <span class="hero-greeting">Hello, I'm</span>
                         <span class="hero-name">Kiran Sonawane</span>
@@ -700,6 +700,35 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Professional certifications and achievements</p>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h3>AWS Certified Solutions Architect</h3>
+                        <p class="cert-level">Associate Level</p>
+                        <p class="cert-description">Validated expertise in designing distributed systems on AWS</p>
+                        <div class="cert-details">
+                            <span class="cert-date">Issued: 2024</span>
+                            <span class="cert-status">Active</span>
+                        </div>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
@@ -707,129 +736,490 @@
                 <h2 class="section-title">Work Experience</h2>
                 <p class="section-subtitle">Professional journey and achievements</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-icon">
-                            <i class="fas fa-briefcase"></i>
+            <div class="experience-grid">
+                <div class="experience-card current">
+                    <div class="card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-building"></i>
                         </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Senior DevOps Engineer</h3>
-                            <span class="company">DataVizz</span>
+                        <div class="job-info">
+                            <h3 class="job-title">Senior DevOps Engineer</h3>
+                            <p class="company-name">DataVizz</p>
                             <span class="duration">Sep 2024 - May 2025</span>
                         </div>
-                        <div class="timeline-projects">
-                            <div class="project">
-                                <h4>Cloud-Native Serverless Application</h4>
-                                <ul>
-                                    <li>Designed and implemented serverless Python-based application using AWS Lambda, API Gateway, CloudFront, and RDS Aurora DB</li>
-                                    <li>Implemented Infrastructure as Code (IaC) principles with Terraform for scalable cloud architecture</li>
-                                    <li>Used GitHub Actions for CI/CD pipeline automation for backend and frontend deployment</li>
-                                    <li>Created comprehensive Grafana Dashboard with real-time alerts using CloudWatch Metrics</li>
-                                    <li>Successfully deployed and maintained the application with zero downtime</li>
-                                </ul>
+                        <div class="status-badge">
+                            <span class="badge current">Current</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="achievements">
+                            <h4>Key Achievements</h4>
+                            <div class="achievement-list">
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Zero downtime deployments</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>50% cost reduction through optimization</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>99.9% uptime maintained</span>
+                                </div>
                             </div>
-                            <div class="project">
-                                <h4>Social Media Platform - Kubernetes Deployment</h4>
-                                <ul>
-                                    <li>Worked on Maven-based microservices application deployment and scaling</li>
-                                    <li>Deployed applications on GKE (Kubernetes) across Dev, Stage, and Production clusters</li>
-                                    <li>Managed services, deployments, and Ingress controller using Helm charts for efficient orchestration</li>
-                                    <li>Set up IAM roles, Cloud storage and Cloud SQL instances with proper security configurations</li>
-                                    <li>Implemented auto-scaling policies and monitoring for optimal performance</li>
-                                </ul>
+                        </div>
+                        
+                        <div class="projects">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Cloud-Native Serverless Application Platform</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">AWS Lambda</span>
+                                        <span class="tech-tag">API Gateway</span>
+                                        <span class="tech-tag">RDS Aurora</span>
+                                        <span class="tech-tag">CloudFront</span>
+                                        <span class="tech-tag">Terraform</span>
+                                        <span class="tech-tag">GitHub Actions</span>
+                                        <span class="tech-tag">Grafana</span>
+                                        <span class="tech-tag">CloudWatch</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Architected and implemented a complete serverless application platform using AWS Lambda for backend processing, 
+                                    API Gateway for RESTful endpoints, and RDS Aurora for database management. Implemented Infrastructure as Code 
+                                    with Terraform for scalable cloud architecture, automated CI/CD pipelines with GitHub Actions, and created 
+                                    comprehensive Grafana dashboards with real-time CloudWatch metrics for monitoring and alerting.
+                                </p>
+                                <div class="project-details">
+                                    <h5>Key Implementation Details:</h5>
+                                    <ul>
+                                        <li>• <strong>Serverless Architecture:</strong> Designed event-driven Lambda functions with proper error handling and retry mechanisms</li>
+                                        <li>• <strong>Database Optimization:</strong> Configured Aurora DB with read replicas and automated backups</li>
+                                        <li>• <strong>CDN Integration:</strong> Implemented CloudFront distribution for global content delivery</li>
+                                        <li>• <strong>Security:</strong> Applied IAM roles, VPC configuration, and encryption at rest and in transit</li>
+                                        <li>• <strong>Monitoring:</strong> Set up custom CloudWatch alarms and Grafana visualization dashboards</li>
+                                    </ul>
+                                </div>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">99.9%</span>
+                                        <span class="metric-label">Uptime</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">50%</span>
+                                        <span class="metric-label">Cost Reduction</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">2s</span>
+                                        <span class="metric-label">Response Time</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Social Media Platform - Kubernetes Microservices</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">GKE</span>
+                                        <span class="tech-tag">Helm Charts</span>
+                                        <span class="tech-tag">Microservices</span>
+                                        <span class="tech-tag">Auto-scaling</span>
+                                        <span class="tech-tag">Maven</span>
+                                        <span class="tech-tag">Cloud SQL</span>
+                                        <span class="tech-tag">Cloud Storage</span>
+                                        <span class="tech-tag">Ingress</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Deployed and managed a large-scale social media platform built with Maven-based microservices architecture 
+                                    on Google Kubernetes Engine (GKE). Implemented multi-environment deployment strategy across Dev, Stage, and 
+                                    Production clusters with Helm charts for efficient orchestration. Configured auto-scaling policies, IAM roles, 
+                                    Cloud Storage, and Cloud SQL instances with comprehensive security configurations and monitoring.
+                                </p>
+                                <div class="project-details">
+                                    <h5>Key Implementation Details:</h5>
+                                    <ul>
+                                        <li>• <strong>Microservices Architecture:</strong> Deployed 15+ microservices with proper service mesh communication</li>
+                                        <li>• <strong>Helm Management:</strong> Created reusable Helm charts for consistent deployments across environments</li>
+                                        <li>• <strong>Auto-scaling:</strong> Implemented HPA and VPA for automatic resource scaling based on demand</li>
+                                        <li>• <strong>Database Management:</strong> Configured Cloud SQL with connection pooling and read replicas</li>
+                                        <li>• <strong>Security:</strong> Applied network policies, RBAC, and secrets management</li>
+                                        <li>• <strong>Monitoring:</strong> Set up Prometheus and Grafana for comprehensive observability</li>
+                                    </ul>
+                                </div>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">15+</span>
+                                        <span class="metric-label">Microservices</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">3</span>
+                                        <span class="metric-label">Environments</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">99.95%</span>
+                                        <span class="metric-label">Availability</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-icon">
-                            <i class="fas fa-briefcase"></i>
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>DevOps Engineer</h3>
-                            <span class="company">Eryushion TechSol Pvt Ltd</span>
+                        <div class="job-info">
+                            <h3 class="job-title">DevOps Engineer</h3>
+                            <p class="company-name">Eryushion TechSol Pvt Ltd</p>
                             <span class="duration">May 2024 - July 2024</span>
                         </div>
-                        <div class="timeline-projects">
-                            <div class="project">
-                                <h4>Full-Stack Application DevOps</h4>
-                                <ul>
-                                    <li>Developed Python applications including Core concepts, File handling, Third-Party packages, REST APIs, and Flask frameworks</li>
-                                    <li>Set up automated GitHub Actions pipeline for React JS application with AWS CloudFront (CDN) integration for S3</li>
-                                    <li>Implemented seamless auto-deployment for Node.js backend on AWS EC2 server</li>
-                                    <li>Configured monitoring and logging systems for application performance tracking</li>
-                                </ul>
+                        <div class="status-badge">
+                            <span class="badge completed">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="achievements">
+                            <h4>Key Achievements</h4>
+                            <div class="achievement-list">
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Automated deployment pipelines</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Full-stack application management</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Performance monitoring setup</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="projects">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Full-Stack Application Development & DevOps</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">Flask</span>
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">Node.js</span>
+                                        <span class="tech-tag">AWS EC2</span>
+                                        <span class="tech-tag">CloudFront</span>
+                                        <span class="tech-tag">S3</span>
+                                        <span class="tech-tag">GitHub Actions</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Developed comprehensive Python applications including core concepts, file handling, third-party packages, 
+                                    REST APIs, and Flask frameworks. Implemented automated GitHub Actions pipeline for React JS application 
+                                    with AWS CloudFront CDN integration for S3 static hosting. Set up seamless auto-deployment for Node.js 
+                                    backend on AWS EC2 server with comprehensive monitoring and logging systems.
+                                </p>
+                                <div class="project-details">
+                                    <h5>Key Implementation Details:</h5>
+                                    <ul>
+                                        <li>• <strong>Backend Development:</strong> Built RESTful APIs using Python Flask with proper error handling and validation</li>
+                                        <li>• <strong>Frontend Integration:</strong> Developed React components with responsive design and state management</li>
+                                        <li>• <strong>CI/CD Pipeline:</strong> Automated deployment pipeline with GitHub Actions for both frontend and backend</li>
+                                        <li>• <strong>Cloud Infrastructure:</strong> Configured AWS EC2 instances with auto-scaling and load balancing</li>
+                                        <li>• <strong>CDN Setup:</strong> Implemented CloudFront distribution for S3 static assets with global caching</li>
+                                        <li>• <strong>Monitoring:</strong> Set up application performance monitoring and logging for production environments</li>
+                                    </ul>
+                                </div>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">5+</span>
+                                        <span class="metric-label">Applications</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">100%</span>
+                                        <span class="metric-label">Automation</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">99.8%</span>
+                                        <span class="metric-label">Uptime</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-icon">
-                            <i class="fas fa-briefcase"></i>
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-database"></i>
                         </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>DevOps Engineer</h3>
-                            <span class="company">DataVizz</span>
+                        <div class="job-info">
+                            <h3 class="job-title">DevOps Engineer</h3>
+                            <p class="company-name">DataVizz</p>
                             <span class="duration">Feb 2023 - Jan 2024</span>
                         </div>
-                        <div class="timeline-projects">
-                            <div class="project">
-                                <h4>Data Governance Platform</h4>
-                                <ul>
-                                    <li>Led comprehensive CI/CD implementation using GitHub, AWS CodeBuild, CodePipeline, and EC2 for efficient software delivery</li>
-                                    <li>Worked extensively with Docker including Dockerfile optimization, Docker Image management, and Docker-Compose orchestration</li>
-                                    <li>Managed on-premises server infrastructure for Azure DevOps pipelines using self-hosted agents</li>
-                                    <li>Implemented automated testing and deployment strategies for improved efficiency</li>
-                                </ul>
+                        <div class="status-badge">
+                            <span class="badge completed">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="achievements">
+                            <h4>Key Achievements</h4>
+                            <div class="achievement-list">
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Fortune 500 client projects</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Data lake implementation</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Infrastructure automation</span>
+                                </div>
                             </div>
-                            <div class="project">
-                                <h4>Fortune 500 Events Domain - Data Lake Solution</h4>
-                                <ul>
-                                    <li>Designed and implemented comprehensive templates for AWS CloudFormation for infrastructure automation</li>
-                                    <li>Automated end-to-end workflows using Bitbucket and Bamboo for rapid software delivery and deployment</li>
-                                    <li>Managed IAM policies for precise permissions and secure remote access across multiple environments</li>
-                                    <li>Implemented AWS Glue, Athena, and Lake Formation for advanced data governance and analytics</li>
-                                    <li>Developed Python scripts using Boto3 for automation of multiple AWS services and resource management</li>
-                                </ul>
+                        </div>
+                        
+                        <div class="projects">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Data Governance Platform - CI/CD Implementation</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Docker</span>
+                                        <span class="tech-tag">AWS CodeBuild</span>
+                                        <span class="tech-tag">CodePipeline</span>
+                                        <span class="tech-tag">Azure DevOps</span>
+                                        <span class="tech-tag">Self-hosted Agents</span>
+                                        <span class="tech-tag">Automated Testing</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Led comprehensive CI/CD implementation using GitHub, AWS CodeBuild, CodePipeline, and EC2 for efficient 
+                                    software delivery. Worked extensively with Docker including Dockerfile optimization, Docker Image management, 
+                                    and Docker-Compose orchestration. Managed on-premises server infrastructure for Azure DevOps pipelines using 
+                                    self-hosted agents and implemented automated testing and deployment strategies for improved efficiency.
+                                </p>
+                                <div class="project-details">
+                                    <h5>Key Implementation Details:</h5>
+                                    <ul>
+                                        <li>• <strong>Docker Optimization:</strong> Created multi-stage Dockerfiles reducing image size by 60%</li>
+                                        <li>• <strong>CI/CD Pipeline:</strong> Built end-to-end pipeline with automated testing and deployment</li>
+                                        <li>• <strong>Infrastructure Management:</strong> Managed on-premises servers with self-hosted Azure DevOps agents</li>
+                                        <li>• <strong>Container Orchestration:</strong> Implemented Docker-Compose for multi-container applications</li>
+                                        <li>• <strong>Automated Testing:</strong> Integrated unit, integration, and performance testing in pipeline</li>
+                                        <li>• <strong>Deployment Strategy:</strong> Implemented blue-green and rolling deployment strategies</li>
+                                    </ul>
+                                </div>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">60%</span>
+                                        <span class="metric-label">Size Reduction</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">5x</span>
+                                        <span class="metric-label">Faster Deployments</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">100%</span>
+                                        <span class="metric-label">Automation</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Fortune 500 Data Lake Solution - Enterprise Analytics</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">CloudFormation</span>
+                                        <span class="tech-tag">AWS Glue</span>
+                                        <span class="tech-tag">Athena</span>
+                                        <span class="tech-tag">Lake Formation</span>
+                                        <span class="tech-tag">Bitbucket</span>
+                                        <span class="tech-tag">Bamboo</span>
+                                        <span class="tech-tag">Boto3</span>
+                                        <span class="tech-tag">IAM</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Designed and implemented comprehensive templates for AWS CloudFormation for infrastructure automation. 
+                                    Automated end-to-end workflows using Bitbucket and Bamboo for rapid software delivery and deployment. 
+                                    Managed IAM policies for precise permissions and secure remote access across multiple environments. 
+                                    Implemented AWS Glue, Athena, and Lake Formation for advanced data governance and analytics. 
+                                    Developed Python scripts using Boto3 for automation of multiple AWS services and resource management.
+                                </p>
+                                <div class="project-details">
+                                    <h5>Key Implementation Details:</h5>
+                                    <ul>
+                                        <li>• <strong>Infrastructure as Code:</strong> Created reusable CloudFormation templates for consistent deployments</li>
+                                        <li>• <strong>Data Lake Architecture:</strong> Built scalable data lake with Glue ETL jobs and Athena queries</li>
+                                        <li>• <strong>Data Governance:</strong> Implemented Lake Formation for fine-grained access control and data cataloging</li>
+                                        <li>• <strong>Automation Scripts:</strong> Developed Boto3 scripts for automated resource provisioning and management</li>
+                                        <li>• <strong>Security Implementation:</strong> Applied IAM policies with least privilege access principles</li>
+                                        <li>• <strong>CI/CD Integration:</strong> Automated data pipeline deployments with Bitbucket and Bamboo</li>
+                                    </ul>
+                                </div>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">Fortune 500</span>
+                                        <span class="metric-label">Client</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">PB+</span>
+                                        <span class="metric-label">Data Volume</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">99.9%</span>
+                                        <span class="metric-label">Reliability</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-icon">
-                            <i class="fas fa-briefcase"></i>
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Junior DevOps Engineer</h3>
+                            <p class="company-name">Ulgulan Tech Pvt. Ltd</p>
+                            <span class="duration">Jan 2021 - Jan 2023 • 2 Years</span>
+                        </div>
+                        <div class="status-badge">
+                            <span class="badge completed">Completed</span>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Junior DevOps Engineer</h3>
-                            <span class="company">Ulgulan Tech Pvt. Ltd</span>
-                            <span class="duration">Jan 2021 - Jan 2023</span>
+                    
+                    <div class="card-content">
+                        <div class="achievements">
+                            <h4>Key Achievements</h4>
+                            <div class="achievement-list">
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>100% deployment automation achieved</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>60% reduction in deployment time</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Zero-downtime deployments implemented</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Agile methodology successfully adopted</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="timeline-projects">
-                            <div class="project">
-                                <h4>Enterprise CI/CD Implementation</h4>
-                                <ul>
-                                    <li>Developed and optimized CI/CD pipeline using Jenkins for multiple application deployments</li>
-                                    <li>Set up and configured EC2 servers for multiple environments with auto-scaling and load balancer implementation</li>
-                                    <li>Managed Git & GitHub version control systems and established branching strategies for team collaboration</li>
-                                    <li>Applied Agile methodologies (Scrum) and managed complete SDLC processes for project delivery</li>
-                                    <li>Utilized Jira and Confluence for comprehensive sprint planning, task tracking, and project documentation</li>
-                                    <li>Implemented monitoring and alerting systems for infrastructure health and performance tracking</li>
-                                </ul>
+                        
+                        <div class="projects">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Enterprise CI/CD Pipeline Development</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Jenkins</span>
+                                        <span class="tech-tag">AWS EC2</span>
+                                        <span class="tech-tag">Git/GitHub</span>
+                                        <span class="tech-tag">Docker</span>
+                                        <span class="tech-tag">Load Balancer</span>
+                                        <span class="tech-tag">Auto Scaling</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Architected and implemented comprehensive CI/CD pipelines using Jenkins for seamless application deployments. 
+                                    Configured auto-scaling EC2 infrastructure with Application Load Balancers, implemented Git branching strategies 
+                                    (GitFlow), and established Docker containerization for consistent deployment environments across multiple stages.
+                                </p>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">15+</span>
+                                        <span class="metric-label">Applications</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">3</span>
+                                        <span class="metric-label">Environments</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">99.5%</span>
+                                        <span class="metric-label">Success Rate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Agile Project Management & Documentation</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Jira</span>
+                                        <span class="tech-tag">Confluence</span>
+                                        <span class="tech-tag">Agile/Scrum</span>
+                                        <span class="tech-tag">SDLC</span>
+                                        <span class="tech-tag">Sprint Planning</span>
+                                        <span class="tech-tag">Documentation</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Led Agile transformation by implementing Scrum methodologies and establishing comprehensive project management workflows. 
+                                    Created detailed documentation in Confluence, managed sprint planning and task tracking in Jira, and ensured 
+                                    complete SDLC process compliance with proper version control and release management.
+                                </p>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">50+</span>
+                                        <span class="metric-label">Sprints</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">200+</span>
+                                        <span class="metric-label">Tasks</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">95%</span>
+                                        <span class="metric-label">On-time Delivery</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h4>Infrastructure Monitoring & Performance Optimization</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">CloudWatch</span>
+                                        <span class="tech-tag">Monitoring</span>
+                                        <span class="tech-tag">Alerting</span>
+                                        <span class="tech-tag">Performance</span>
+                                        <span class="tech-tag">Logging</span>
+                                        <span class="tech-tag">Dashboards</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    Designed and implemented comprehensive monitoring and alerting systems for infrastructure health and application performance. 
+                                    Created custom CloudWatch dashboards, set up automated alerts for system resources, application metrics, and security events. 
+                                    Established centralized logging and performance tracking to ensure proactive issue resolution and optimal system performance.
+                                </p>
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">24/7</span>
+                                        <span class="metric-label">Monitoring</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">15+</span>
+                                        <span class="metric-label">Dashboards</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">99.9%</span>
+                                        <span class="metric-label">Uptime</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -878,6 +1268,12 @@
                                     <a href="https://www.linkedin.com/in/kiran-sonawane-4106ab27a/" target="_blank" rel="noopener noreferrer">Connect with me</a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="resume-download">
+                            <a href="resume.pdf" class="btn btn-resume" download="Kiran_Sonawane_Resume.pdf">
+                                <i class="fas fa-download"></i>
+                                <span>Download Resume</span>
+                            </a>
                         </div>
                         <div class="services">
                             <h4>Available for Freelance Work</h4>

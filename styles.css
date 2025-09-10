@@ -7,6 +7,9 @@
 
 html {
     scroll-behavior: smooth;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 body {
@@ -14,6 +17,8 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -239,6 +244,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    min-height: 80vh;
+    padding: 2rem 0;
 }
 
 .hero-badge {
@@ -260,23 +267,44 @@ body {
 .hero-title {
     margin-bottom: 2rem;
     line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 200px;
 }
 
 .hero-greeting {
     display: block;
-    font-size: 1.4rem;
-    color: #b8b8b8;
-    margin-bottom: 1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    color: #667eea;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
     text-transform: uppercase;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.5s both;
+    line-height: 1.3;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.hero-greeting::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
 }
 
 .hero-name {
     display: block;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
     background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #667eea);
     background-size: 300% 300%;
@@ -285,35 +313,61 @@ body {
     background-clip: text;
     line-height: 1.1;
     margin-bottom: 1.2rem;
-    animation: glow 3s ease-in-out infinite alternate, gradientShift 4s ease-in-out infinite;
-    letter-spacing: -2px;
-    text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+    animation: fadeInUpGradient 1s ease-out 0.8s both, gradientShift 4s ease-in-out infinite;
+    letter-spacing: -1px;
+    text-shadow: 0 0 40px rgba(102, 126, 234, 0.4);
+    opacity: 1;
+    position: relative;
+    /* Fallback color for browsers that don't support background-clip */
+    color: #667eea;
+}
+
+.hero-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    border-radius: 2px;
+    animation: expandLine 1.5s ease-out 1.5s both;
+}
+
+/* Ensure gradient text works in all browsers */
+@supports (-webkit-background-clip: text) {
+    .hero-name {
+        color: transparent;
+    }
 }
 
 .hero-role {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: #ffffff;
     margin-bottom: 0;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     opacity: 0.95;
     animation: fadeInUp 1s ease-out 1s both;
     position: relative;
+    line-height: 1.3;
+    padding: 0.8rem 1.5rem;
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    margin-top: 0.5rem;
 }
 
-.hero-role::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    border-radius: 2px;
-    animation: expandLine 1.5s ease-out 1.5s both;
+.hero-role:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
 }
 
 .hero-description {
@@ -436,6 +490,41 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-color: #667eea;
     transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-resume {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-resume:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.resume-download {
+    margin-bottom: 1rem;
 }
 
 .hero-social {
@@ -994,9 +1083,439 @@ body {
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
 }
 
+/* Certifications Section */
+.certifications {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    position: relative;
+}
+
+.certifications::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.certification-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.certification-card:hover::before {
+    left: 100%;
+}
+
+.certification-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(102, 126, 234, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+}
+
+.cert-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.cert-info {
+    flex: 1;
+}
+
+.cert-info h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.cert-level {
+    color: #667eea;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cert-description {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.cert-details {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cert-date, .cert-status {
+    color: #667eea;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.cert-status {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border-color: rgba(76, 175, 80, 0.2);
+}
+
+.cert-badge {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #667eea;
+    flex-shrink: 0;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
 /* Experience Section */
 .experience {
-    padding: 5rem 0;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    position: relative;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.1;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+
+.experience-card.current::before {
+    background: linear-gradient(90deg, #4ade80, #22c55e, #16a34a);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 30px 30px 20px;
+    gap: 20px;
+    position: relative;
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-title {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+}
+
+.company-name {
+    color: #667eea;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+}
+
+.duration {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.status-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.current {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    color: white;
+    box-shadow: 0 2px 10px rgba(74, 222, 128, 0.3);
+}
+
+.badge.completed {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.card-content {
+    padding: 0 30px 30px;
+}
+
+.achievements {
+    margin-bottom: 25px;
+}
+
+.achievements h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.achievements h4::before {
+    content: '🏆';
+    font-size: 1.2rem;
+}
+
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+}
+
+.achievement-item i {
+    color: #4ade80;
+    font-size: 1rem;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(102, 126, 234, 0.2);
+    transform: translateX(5px);
+}
+
+.project-header {
+    margin-bottom: 12px;
+}
+
+.project-header h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.project-description {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+
+.project-details {
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border-left: 3px solid #667eea;
+}
+
+.project-details h5 {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-details li {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 0;
+}
+
+.project-details li strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.project-metrics {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.metric-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 4px;
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .timeline {
@@ -1454,11 +1973,30 @@ body {
         display: block;
         text-align: center;
     }
+    
+    /* Mobile navigation improvements */
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar .container {
+        padding: 0 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        gap: 0.5rem;
+    }
 
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        min-height: 70vh;
+        padding: 1.5rem 0;
     }
 
     .hero-name {
@@ -1481,23 +2019,64 @@ body {
     }
     
     .hero-name {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
         letter-spacing: -1px;
+        margin-bottom: 0.9rem;
+        /* Ensure gradient works on tablet */
+        color: #667eea;
+    }
+    
+    @supports (-webkit-background-clip: text) {
+        .hero-name {
+            color: transparent;
+        }
     }
     
     .hero-role {
-        font-size: 1.4rem;
-        letter-spacing: 1px;
+        font-size: 1.3rem;
+        letter-spacing: 3px;
+        padding: 0.7rem 1.3rem;
     }
     
     .hero-greeting {
+        font-size: 1.1rem;
+        letter-spacing: 2.5px;
+        margin-bottom: 0.9rem;
+        padding-left: 0.9rem;
+    }
+    
+    .experience-grid {
+        gap: 20px;
+    }
+    
+    .card-header {
+        padding: 20px 20px 15px;
+        gap: 15px;
+    }
+    
+    .company-logo {
+        width: 50px;
+        height: 50px;
         font-size: 1.2rem;
-        letter-spacing: 0.8px;
+    }
+    
+    .job-title {
+        font-size: 1.4rem;
+    }
+    
+    .card-content {
+        padding: 0 20px 20px;
     }
 
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .btn {
+        min-width: 160px;
+        font-size: 0.9rem;
     }
 
     .about-content {
@@ -1576,29 +2155,327 @@ body {
     .container {
         padding: 0 15px;
     }
+    
+    /* Fix white background on mobile */
+    html, body {
+        background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
+        background-attachment: fixed !important;
+        min-height: 100vh !important;
+    }
 
     .hero-name {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         letter-spacing: -0.5px;
+        margin-bottom: 0.8rem;
+        /* Ensure gradient works on mobile */
+        color: #667eea;
+    }
+    
+    @supports (-webkit-background-clip: text) {
+        .hero-name {
+            color: transparent;
+        }
     }
     
     .hero-role {
-        font-size: 1.2rem;
-        letter-spacing: 0.5px;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        padding: 0.6rem 1.2rem;
     }
     
     .hero-greeting {
         font-size: 1rem;
-        letter-spacing: 0.5px;
+        letter-spacing: 2px;
+        margin-bottom: 0.8rem;
+        padding-left: 0.8rem;
+    }
+    
+    .experience-grid {
+        gap: 15px;
+    }
+    
+    .card-header {
+        padding: 15px 15px 10px;
+        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .company-logo {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .job-title {
+        font-size: 1.2rem;
+    }
+    
+    .company-name {
+        font-size: 1rem;
+    }
+    
+    .status-badge {
+        position: static;
+        align-self: flex-end;
+        margin-top: -40px;
+    }
+    
+    .card-content {
+        padding: 0 15px 15px;
+    }
+    
+    .tech-stack {
+        gap: 6px;
+    }
+    
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        font-size: 0.85rem;
+        min-width: auto;
+    }
+    
+    /* Mobile hero improvements */
+    .hero {
+        padding: 6rem 0 4rem;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        gap: 1.5rem;
+        min-height: 60vh;
+        padding: 1rem 0;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-stats {
+        gap: 1rem;
+    }
+    
+    .stat {
+        padding: 0.8rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .project-metrics {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Mobile experience section improvements */
+    .experience {
+        padding: 3rem 0;
+    }
+    
+    .experience-grid {
+        gap: 1.5rem;
+    }
+    
+    .experience-card {
+        padding: 1.5rem;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .company-logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .job-title {
+        font-size: 1.1rem;
+    }
+    
+    .company-name {
+        font-size: 0.9rem;
+    }
+    
+    .duration {
+        font-size: 0.8rem;
+    }
+    
+    .metric {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .metric-value {
+        font-size: 1rem;
+    }
+    
+    .metric-label {
+        font-size: 0.75rem;
+    }
+    
+    /* Mobile contact section improvements */
+    .contact {
+        padding: 3rem 0;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .service-tags {
+        gap: 0.5rem;
+    }
+    
+    .service-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .btn-resume {
+        font-size: 0.9rem;
+        padding: 1rem;
     }
 
     .section-title {
         font-size: 2rem;
     }
 
+    /* Mobile certifications section */
+    .certifications {
+        padding: 3rem 0;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .certification-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .cert-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .cert-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .cert-description {
+        font-size: 0.85rem;
+    }
+    
+    .cert-details {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .cert-date, .cert-status {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
+    
+    .cert-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Mobile footer improvements */
+    .footer {
+        padding: 2rem 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .footer-link {
+        padding: 0.5rem 0;
+    }
+
     .about-stats {
         flex-direction: column;
         align-items: center;
+    }
+    
+    /* Mobile floating elements improvements */
+    .floating-element {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .element-1 {
+        top: 20%;
+        left: 10%;
+    }
+    
+    .element-2 {
+        top: 30%;
+        right: 15%;
+    }
+    
+    .element-3 {
+        bottom: 30%;
+        left: 20%;
+    }
+    
+    .element-4 {
+        bottom: 20%;
+        right: 10%;
     }
 
     .btn {
@@ -1614,6 +2491,19 @@ body {
     .tech-item {
         padding: 0.8rem 0.3rem;
         min-width: 80px;
+    }
+    
+    /* Mobile tech section improvements */
+    .tech {
+        padding: 3rem 0;
+    }
+    
+    .tech-scroll {
+        animation-duration: 25s;
+    }
+    
+    .tech-scroll-container {
+        padding: 1rem 0;
     }
 
     .tech-logo {
@@ -1695,6 +2585,45 @@ body {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Special animation for gradient text */
+@keyframes fadeInUpGradient {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        -webkit-text-fill-color: transparent;
+        background-position: 0% 50%;
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(15px);
+        -webkit-text-fill-color: transparent;
+        background-position: 50% 50%;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-text-fill-color: transparent;
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeInUpName {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        -webkit-text-fill-color: transparent;
+    }
+    50% {
+        opacity: 0.8;
+        -webkit-text-fill-color: transparent;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-text-fill-color: transparent;
     }
 }
 
