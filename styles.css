@@ -2089,7 +2089,9 @@ body {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         gap: 2rem;
         min-height: 70vh;
@@ -2134,6 +2136,19 @@ body {
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 280px;
+        width: 100%;
+        height: auto;
     }
     
     .hero-stats {
@@ -2356,6 +2371,20 @@ body {
     .btn {
         width: 100%;
         max-width: 280px;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-image img {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
     }
     
     @supports (-webkit-background-clip: text) {
