@@ -31,11 +31,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        navbar.classList.remove('scrolled');
     }
 });
 
@@ -379,11 +377,9 @@ const debouncedScrollHandler = debounce(() => {
     // Navbar background change
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        navbar.classList.remove('scrolled');
     }
     
     // Back to top button visibility
@@ -397,3 +393,72 @@ const debouncedScrollHandler = debounce(() => {
 }, 10);
 
 window.addEventListener('scroll', debouncedScrollHandler);
+
+// Tech logos click functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const techScroll = document.querySelector('.tech-scroll');
+    const techItems = document.querySelectorAll('.tech-item');
+    let isPaused = false;
+    
+    // Check if tech logos are loading properly
+    const techLogos = document.querySelectorAll('.tech-logo img');
+    techLogos.forEach((img, index) => {
+        img.addEventListener('error', () => {
+            console.log(`Logo ${index} failed to load:`, img.src);
+            // Add fallback text
+            img.style.display = 'none';
+            const fallback = document.createElement('div');
+            fallback.textContent = img.alt || 'Logo';
+            fallback.style.cssText = `
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                font-size: 0.8rem;
+                font-weight: bold;
+                border-radius: 8px;
+            `;
+            img.parentNode.appendChild(fallback);
+        });
+        
+        img.addEventListener('load', () => {
+            console.log(`Logo ${index} loaded successfully:`, img.src);
+        });
+    });
+    
+    // Add click event to each tech item
+    techItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            isPaused = !isPaused;
+            
+            if (isPaused) {
+                techScroll.style.animationPlayState = 'paused';
+                showNotification('Scrolling paused. Click any logo to resume.', 'info');
+            } else {
+                techScroll.style.animationPlayState = 'running';
+                showNotification('Scrolling resumed!', 'success');
+            }
+        });
+        
+        // Add cursor pointer to indicate clickable
+        item.style.cursor = 'pointer';
+    });
+    
+    // Add hover pause functionality
+    const techContainer = document.querySelector('.tech-scroll-container');
+    techContainer.addEventListener('mouseenter', () => {
+        if (!isPaused) {
+            techScroll.style.animationPlayState = 'paused';
+        }
+    });
+    
+    techContainer.addEventListener('mouseleave', () => {
+        if (!isPaused) {
+            techScroll.style.animationPlayState = 'running';
+        }
+    });
+});
