@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<!--  Kiran Sonawane - Senior DevOps Engineer Portfolio Sitemap - Optimized for Local SEO (Pune, Mumbai, India)  -->
 <url>
 <loc>https://kiransonawane.netlify.app/</loc>
-<lastmod>2025-09-11T12:49:12+00:00</lastmod>
+<lastmod>2024-12-19T12:00:00+00:00</lastmod>
+<changefreq>weekly</changefreq>
 <priority>1.00</priority>
 </url>
 <url>
+<loc>https://kiransonawane.netlify.app/#about</loc>
+<lastmod>2024-12-19T12:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+</url>
+<url>
+<loc>https://kiransonawane.netlify.app/#skills</loc>
+<lastmod>2024-12-19T12:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.90</priority>
+</url>
+<url>
+<loc>https://kiransonawane.netlify.app/#experience</loc>
+<lastmod>2024-12-19T12:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.90</priority>
+</url>
+<url>
+<loc>https://kiransonawane.netlify.app/#certifications</loc>
+<lastmod>2024-12-19T12:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://kiransonawane.netlify.app/#contact</loc>
+<lastmod>2024-12-19T12:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
 <loc>https://kiransonawane.netlify.app/Kiran_Sonawane_Resume.pdf</loc>
-<lastmod>2025-09-11T12:49:12+00:00</lastmod>
+<lastmod>2024-12-19T12:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.80</priority>
 </url>
 </urlset>

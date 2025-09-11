@@ -1,8 +1,61 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap location - Kiran Sonawane DevOps Engineer Portfolio
 Sitemap: https://kiransonawane.netlify.app/sitemap.xml
 
 # Allow all search engines to crawl the site
 Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Indian search engines
+User-agent: GurujiBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Block access to sensitive files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log$
+Disallow: /*.tmp$
+
+# Allow access to important files for SEO
+Allow: /profile.jpg
+Allow: /Kiran_Sonawane_Resume.pdf
+Allow: /favicon.png
+Allow: /Favicon.png
+Allow: /styles.css
+Allow: /script.js
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Additional SEO-friendly directives
+# Host: kiransonawane.netlify.app
